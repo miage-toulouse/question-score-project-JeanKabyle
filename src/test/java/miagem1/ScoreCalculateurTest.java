@@ -45,4 +45,20 @@ public class ScoreCalculateurTest {
         //Then
         assertEquals(100f,resScore,0.01f);
     }
+
+    @Test
+    public void calculeScoreToutesLesReponses() {
+        //When
+        float resScore = scoreCalc.calculeScore(new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5)), questionAChoixMultiple);
+        //Then
+        assertEquals(0f,resScore,0.01f);
+    }
+
+    @Test
+    public void calculeScoreTroisReponses() {
+        //When
+        float resScore = scoreCalc.calculeScore(new ArrayList<Integer>(Arrays.asList(1, 2, 3)), questionAChoixMultiple);
+        //Then
+        assertEquals(16.66f,resScore,0.01f);
+    }
 }
